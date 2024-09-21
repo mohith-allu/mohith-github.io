@@ -20,6 +20,7 @@
             margin: 0;
             padding: 20px;
             color: var(--text-color);
+            overflow-x: hidden;
         }
 
         .container {
@@ -30,13 +31,19 @@
             border-radius: 15px;
             box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
             border-left: 6px solid var(--primary-color);
-            animation: fadeIn 1.5s ease-in-out;
+            animation: fadeInUp 1.5s ease-in-out;
+            transform: scale(0.95);
+            transition: transform 0.5s ease-in-out;
         }
 
-        @keyframes fadeIn {
+        .container:hover {
+            transform: scale(1);
+        }
+
+        @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(10px);
+                transform: translateY(50px);
             }
             to {
                 opacity: 1;
@@ -55,6 +62,21 @@
             margin-bottom: 10px;
             border-bottom: 3px solid var(--primary-color);
             padding-bottom: 10px;
+            animation: bounceIn 2s ease-in-out;
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+            }
         }
 
         h2 {
@@ -62,6 +84,18 @@
             margin-bottom: 15px;
             border-bottom: 2px solid var(--secondary-color);
             padding-bottom: 5px;
+            animation: fadeInLeft 1.5s ease-in-out;
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
         p, li {
@@ -79,18 +113,7 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 30px;
-            animation: slideIn 1s ease-out;
-        }
-
-        @keyframes slideIn {
-            from {
-                transform: translateX(-50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
+            position: relative;
         }
 
         .header-info div {
@@ -109,78 +132,7 @@
             text-decoration: underline;
         }
 
-        .section-title {
-            margin-top: 40px;
-            font-size: 22px;
-            font-weight: bold;
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 10px;
-        }
-
-        .skills {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            animation: fadeIn 1.5s ease-in-out;
-        }
-
-        .skills div {
-            padding: 15px;
-            background-color: var(--bg-color);
-            border-radius: 10px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        .skills div:hover {
-            background-color: var(--primary-color);
-            color: #fff;
-            transform: translateY(-5px);
-        }
-
-        .skills div strong {
-            color: var(--secondary-color);
-        }
-
-        .footer {
-            text-align: center;
-            margin-top: 40px;
-            font-size: 14px;
-            color: #95a5a6;
-            animation: fadeInUp 2s ease-out;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        li {
-            margin-bottom: 10px;
-        }
-
-        /* Link hover animation */
-        a {
-            color: var(--primary-color);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            text-decoration: underline;
-            color: var(--secondary-color);
-        }
-
-        ul li strong {
-            color: var(--text-color);
-        }
-
-        /* Floating hover effects for interactive feel */
+        /* Cool line effect for links */
         .header-info a::after {
             content: "";
             width: 0%;
@@ -194,6 +146,133 @@
 
         .header-info a:hover::after {
             width: 100%;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .skills div {
+            padding: 15px;
+            background-color: var(--bg-color);
+            border-radius: 10px;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            transform: rotateY(0deg);
+            transform-origin: center;
+        }
+
+        .skills div:hover {
+            background-color: var(--primary-color);
+            color: #fff;
+            transform: rotateY(360deg) scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .skills div strong {
+            color: var(--secondary-color);
+        }
+
+        /* Section titles with zoom effect */
+        .section-title {
+            margin-top: 40px;
+            font-size: 22px;
+            font-weight: bold;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+            transform: scale(0.9);
+            transition: transform 0.5s ease;
+        }
+
+        .section-title:hover {
+            transform: scale(1);
+        }
+
+        /* Floating footer effect */
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #95a5a6;
+            transform: translateY(0);
+            animation: floatUp 2s ease-out infinite alternate;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-10px);
+            }
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        /* Enhanced hover effects for a dynamic feel */
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.3s ease;
+            display: inline-block;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: var(--secondary-color);
+            transform: scale(1.1);
+        }
+
+        ul li strong {
+            color: var(--text-color);
+        }
+
+        /* Card-like effect for project and education list items */
+        ul li {
+            background-color: var(--bg-color);
+            border-left: 4px solid var(--primary-color);
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        ul li:hover {
+            background-color: #ecf0f1;
+            transform: translateX(10px);
+        }
+
+        ul li::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: -20px;
+            width: 10px;
+            height: 10px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            transform: translateY(-50%);
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        ul li:hover::before {
+            opacity: 1;
+            left: -5px;
         }
     </style>
 </head>
