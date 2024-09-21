@@ -5,40 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume - Allu Naga Sai Mohith</title>
     <style>
+        /* Root variables for consistent theming */
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #1abc9c;
+            --text-color: #2c3e50;
+            --bg-color: #f4f6f7;
+            --accent-color: #f39c12;
+        }
+
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f0f4f8;
+            background-color: var(--bg-color);
             margin: 0;
             padding: 20px;
-            color: #2c3e50;
+            color: var(--text-color);
         }
 
         .container {
-            max-width: 850px;
+            max-width: 900px;
             background-color: #ffffff;
             padding: 30px;
             margin: 0 auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            border-left: 6px solid #3498db;
+            border-radius: 15px;
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+            border-left: 6px solid var(--primary-color);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         h1, h2 {
-            color: #3498db;
+            color: var(--primary-color);
             font-family: 'Georgia', serif;
+            transition: color 0.3s ease;
         }
 
         h1 {
-            font-size: 38px;
+            font-size: 40px;
             margin-bottom: 10px;
-            border-bottom: 3px solid #3498db;
+            border-bottom: 3px solid var(--primary-color);
             padding-bottom: 10px;
         }
 
         h2 {
-            font-size: 24px;
+            font-size: 26px;
             margin-bottom: 15px;
-            border-bottom: 2px solid #2980b9;
+            border-bottom: 2px solid var(--secondary-color);
             padding-bottom: 5px;
         }
 
@@ -57,6 +79,18 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 30px;
+            animation: slideIn 1s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
         }
 
         .header-info div {
@@ -64,13 +98,14 @@
         }
 
         .header-info a {
-            color: #2980b9;
+            color: var(--secondary-color);
             text-decoration: none;
             font-weight: bold;
+            position: relative;
         }
 
         .header-info a:hover {
-            color: #1abc9c;
+            color: var(--accent-color);
             text-decoration: underline;
         }
 
@@ -86,22 +121,24 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 15px;
+            animation: fadeIn 1.5s ease-in-out;
         }
 
         .skills div {
             padding: 15px;
-            background-color: #ecf0f1;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
+            background-color: var(--bg-color);
+            border-radius: 10px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         .skills div:hover {
-            background-color: #3498db;
+            background-color: var(--primary-color);
             color: #fff;
+            transform: translateY(-5px);
         }
 
         .skills div strong {
-            color: #2980b9;
+            color: var(--secondary-color);
         }
 
         .footer {
@@ -109,29 +146,54 @@
             margin-top: 40px;
             font-size: 14px;
             color: #95a5a6;
+            animation: fadeInUp 2s ease-out;
         }
 
-        .footer p {
-            margin: 0;
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         li {
             margin-bottom: 10px;
         }
 
-        /* Add hover effects and slight color changes for interactivity */
+        /* Link hover animation */
         a {
-            color: #3498db;
+            color: var(--primary-color);
             text-decoration: none;
+            transition: color 0.3s ease;
         }
 
         a:hover {
             text-decoration: underline;
-            color: #1abc9c;
+            color: var(--secondary-color);
         }
 
         ul li strong {
-            color: #34495e;
+            color: var(--text-color);
+        }
+
+        /* Floating hover effects for interactive feel */
+        .header-info a::after {
+            content: "";
+            width: 0%;
+            height: 2px;
+            background-color: var(--accent-color);
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            transition: width 0.4s ease;
+        }
+
+        .header-info a:hover::after {
+            width: 100%;
         }
     </style>
 </head>
