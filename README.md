@@ -110,7 +110,7 @@ I hereby declare that the above-mentioned information is true to the best of my 
 
 ## Resume
 
-You can view my detailed resume [here](resume.html).
+You can view my detailed resume [here](portfolio.html).
 
 ---
 
