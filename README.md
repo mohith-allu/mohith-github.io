@@ -48,7 +48,6 @@ Motivated B.Tech student specializing in Electronics and Communication Engineeri
 - Reduced hardware complexity and enhanced computation speed, making the design more efficient for low-power applications.
 
 ---
----
 
 ## Skills
 
@@ -106,6 +105,12 @@ Motivated B.Tech student specializing in Electronics and Communication Engineeri
 ## Declaration
 
 I hereby declare that the above-mentioned information is true to the best of my knowledge and belief.
+
+---
+
+## Resume
+
+You can view my detailed resume [here](resume.html).
 
 ---
 
