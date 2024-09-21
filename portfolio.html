@@ -6,44 +6,45 @@
     <title>Resume - Allu Naga Sai Mohith</title>
     <style>
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            background-color: #f9f9f9;
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8;
             margin: 0;
             padding: 20px;
             color: #2c3e50;
         }
 
         .container {
-            max-width: 800px;
-            background-color: #fff;
+            max-width: 850px;
+            background-color: #ffffff;
             padding: 30px;
             margin: 0 auto;
             border-radius: 10px;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-left: 6px solid #3498db;
         }
 
         h1, h2 {
-            color: #2c3e50;
+            color: #3498db;
             font-family: 'Georgia', serif;
         }
 
         h1 {
-            font-size: 36px;
+            font-size: 38px;
             margin-bottom: 10px;
-            border-bottom: 2px solid #3498db;
+            border-bottom: 3px solid #3498db;
             padding-bottom: 10px;
         }
 
         h2 {
             font-size: 24px;
             margin-bottom: 15px;
-            border-bottom: 1px solid #3498db;
+            border-bottom: 2px solid #2980b9;
             padding-bottom: 5px;
         }
 
         p, li {
             font-size: 16px;
-            line-height: 1.6;
+            line-height: 1.8;
         }
 
         ul {
@@ -63,11 +64,13 @@
         }
 
         .header-info a {
-            color: #3498db;
+            color: #2980b9;
             text-decoration: none;
+            font-weight: bold;
         }
 
         .header-info a:hover {
+            color: #1abc9c;
             text-decoration: underline;
         }
 
@@ -75,20 +78,30 @@
             margin-top: 40px;
             font-size: 22px;
             font-weight: bold;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 2px solid #ddd;
             padding-bottom: 10px;
         }
 
         .skills {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 10px;
+            gap: 15px;
         }
 
         .skills div {
-            padding: 10px;
+            padding: 15px;
             background-color: #ecf0f1;
             border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .skills div:hover {
+            background-color: #3498db;
+            color: #fff;
+        }
+
+        .skills div strong {
+            color: #2980b9;
         }
 
         .footer {
@@ -100,6 +113,25 @@
 
         .footer p {
             margin: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        /* Add hover effects and slight color changes for interactivity */
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #1abc9c;
+        }
+
+        ul li strong {
+            color: #34495e;
         }
     </style>
 </head>
