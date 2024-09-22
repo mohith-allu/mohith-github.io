@@ -3,91 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Allu Naga Sai Mohith - Portfolio</title>
+    <title>Resume - Allu Naga Sai Mohith</title>
     <style>
+        /* Root variables for consistent theming */
         :root {
-            --primary-color: #1abc9c;
-            --secondary-color: #3498db;
-            --text-color: #ecf0f1;
-            --bg-color: #2c3e50;
+            --primary-color: #3498db;
+            --secondary-color: #1abc9c;
+            --text-color: #2c3e50;
+            --bg-color: #f4f6f7;
             --accent-color: #f39c12;
         }
 
         body {
             font-family: 'Arial', sans-serif;
             background-color: var(--bg-color);
-            color: var(--text-color);
             margin: 0;
-            padding: 0;
-        }
-
-        /* Navbar */
-        .navbar {
-            background-color: var(--primary-color);
-            padding: 10px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            width: 100%;
-            z-index: 10;
-        }
-
-        .navbar a {
+            padding: 20px;
             color: var(--text-color);
-            text-decoration: none;
-            padding: 14px 20px;
-            display: inline-block;
-            font-size: 18px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 900px;
+            background-color: #ffffff;
+            padding: 30px;
+            margin: 0 auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+            border-left: 6px solid var(--primary-color);
+            animation: fadeInUp 1.5s ease-in-out;
+            transform: translateY(0);
+            transition: transform 0.5s ease-in-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1, h2 {
+            color: var(--primary-color);
+            font-family: 'Georgia', serif;
             transition: color 0.3s ease;
         }
 
-        .navbar a:hover {
-            color: var(--accent-color);
-        }
-
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
         h1 {
-            font-size: 36px;
-            color: var(--secondary-color);
+            font-size: 40px;
             margin-bottom: 10px;
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 10px;
+            animation: fadeIn 1.5s ease;
         }
 
         h2 {
-            color: var(--primary-color);
-            font-size: 28px;
-            margin-bottom: 20px;
-            border-bottom: 2px solid var(--primary-color);
+            font-size: 26px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--secondary-color);
             padding-bottom: 5px;
+            animation: fadeIn 1.5s ease-in-out;
         }
 
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 50px 0;
-            background-color: var(--secondary-color);
-            color: var(--text-color);
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
 
-        .hero h1 {
-            margin: 0;
-            font-size: 48px;
-            font-weight: bold;
-        }
-
-        .hero p {
-            font-size: 20px;
-            margin-top: 15px;
-        }
-
-        /* Content Sections */
-        section {
-            margin: 40px 0;
+        p, li {
+            font-size: 16px;
+            line-height: 1.8;
         }
 
         ul {
@@ -95,124 +88,225 @@
             padding: 0;
         }
 
-        ul li {
-            background-color: var(--bg-color);
-            border-left: 4px solid var(--primary-color);
-            padding: 10px 20px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-            transition: transform 0.3s ease;
+        .header-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            position: relative;
         }
 
-        ul li:hover {
-            transform: translateX(10px);
+        .header-info div {
+            text-align: right;
         }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: var(--primary-color);
-            color: var(--text-color);
-            position: sticky;
-            bottom: 0;
+        .header-info a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: bold;
+            position: relative;
+        }
+
+        .header-info a:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+
+        /* Cool line effect for links */
+        .header-info a::after {
+            content: "";
+            width: 0%;
+            height: 2px;
+            background-color: var(--accent-color);
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            transition: width 0.4s ease;
+        }
+
+        .header-info a:hover::after {
             width: 100%;
         }
 
-        @media (max-width: 768px) {
-            .navbar a {
-                font-size: 14px;
-                padding: 10px 12px;
-            }
+        .skills {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
 
-            .hero h1 {
-                font-size: 36px;
-            }
+        .skills div {
+            padding: 15px;
+            background-color: var(--bg-color);
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+        }
 
-            .hero p {
-                font-size: 18px;
-            }
+        .skills div:hover {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
 
-            h2 {
-                font-size: 24px;
+        .skills div strong {
+            color: var(--secondary-color);
+        }
+
+        /* Section titles with zoom effect */
+        .section-title {
+            margin-top: 40px;
+            font-size: 22px;
+            font-weight: bold;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+            transform: scale(0.9);
+            transition: transform 0.5s ease;
+        }
+
+        .section-title:hover {
+            transform: scale(1);
+        }
+
+        /* Floating footer effect */
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #95a5a6;
+            transform: translateY(0);
+            animation: floatUp 2s ease-out infinite alternate;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0);
             }
+            100% {
+                transform: translateY(-5px);
+            }
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        /* Enhanced hover effects for a dynamic feel */
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.3s ease;
+            display: inline-block;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: var(--secondary-color);
+            transform: scale(1.1);
+        }
+
+        ul li strong {
+            color: var(--text-color);
+        }
+
+        /* Card-like effect for project and education list items */
+        ul li {
+            background-color: var(--bg-color);
+            border-left: 4px solid var(--primary-color);
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        ul li:hover {
+            background-color: #ecf0f1;
+            transform: translateX(10px);
+        }
+
+        ul li::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: -20px;
+            width: 10px;
+            height: 10px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            transform: translateY(-50%);
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        ul li:hover::before {
+            opacity: 1;
+            left: -5px;
         }
     </style>
 </head>
 <body>
 
-    <!-- Navbar -->
-    <div class="navbar">
-        <a href="#about">About</a>
-        <a href="#education">Education</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#certifications">Certifications</a>
-        <a href="#contact">Contact</a>
+<div class="container">
+    <div class="header-info">
+        <div>
+            <h1>ALLU NAGA SAI MOHITH</h1>
+        </div>
+        <div>
+            <p>Guntur, India</p>
+            <p>Email: <a href="mailto:2100040232ece@gmail.com">2100040232ece@gmail.com</a></p>
+            <p>Phone: <a href="tel:+91-6300790004">+91 6300790004</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/mohith-allu-937a7b255/" target="_blank">linkedin.com/in/mohith-allu</a></p>
+        </div>
     </div>
 
-    <!-- Hero Section -->
-    <div class="hero" id="about">
-        <h1>ALLU NAGA SAI MOHITH</h1>
-        <p>Motivated B.Tech student specializing in Electronics and Communication Engineering with a strong foundation in programming.</p>
+    <h2 class="section-title">Career Objective</h2>
+    <p>Motivated B.Tech student specializing in Electronics and Communication Engineering with a strong foundation in programming. Proficient in Python and eager to enhance software development and problem-solving skills. Passionate about contributing to the delivery of innovative technology solutions, with a keen focus on applying technical knowledge to real-world challenges and ensuring efficient, high-quality results.</p>
+
+    <h2 class="section-title">Education</h2>
+    <ul>
+        <li><strong>B.Tech, Koneru Lakshmaih University</strong> (2021 - Present) - CGPA: 9.02</li>
+        <li><strong>Intermediate, NRI Junior College</strong> (2019 - 2021) - Marks: 951</li>
+        <li><strong>SSC, GNR Model School</strong> (2019) - GPA: 9.3</li>
+    </ul>
+
+    <h2 class="section-title">Projects</h2>
+    <ul>
+        <li><strong>Light Following Robot</strong><br>
+            Designed a light-following robot capable of autonomously detecting and tracking light sources. Implemented a control algorithm to effectively manage motor functions and sensor input, enabling the robot to move precisely based on real-time light intensity measurements.
+        </li>
+        <li><strong>Library Management System</strong><br>
+            Developed a Library Management System in Python with a modular design, implementing clean and maintainable code for easy future enhancements. Utilized object-oriented programming principles to create scalable and modular code for efficient library operations.
+        </li>
+        <li><strong>Low Power Array Multiplier Using Modified Full Adder</strong><br>
+            Developed a low-power array multiplier by redesigning the traditional full adder to incorporate a single XOR gate and two multiplexers. Achieved a 27% reduction in power consumption compared to the traditional array multiplier, significantly improving energy efficiency. Reduced hardware complexity and enhanced computation speed, making the design more efficient for low-power applications.
+        </li>
+    </ul>
+
+    <h2 class="section-title">Skills</h2>
+    <div class="skills">
+        <div>
+            <strong>Programming Languages:</strong> Python, Java
+        </div>
+        <div>
+            <strong>Software Tools:</strong> Eclipse, Jupiter Notebook
+        </div>
+        <div>
+            <strong>Soft Skills:</strong> Time Management, Problem Solving, Teamwork
+        </div>
+        <div>
+            <strong>Languages:</strong> Telugu, English, Hindi
+        </div>
     </div>
 
-    <!-- Container for sections -->
-    <div class="container">
+    <h2 class="section-title">Certifications</h2>
+    <ul>
+        <li>Python Basics, HackerRank</li>
+        <li>Java Basics, HackerRank</li>
+        <li>Problem Solving Basics, HackerRank</li>
+    </ul>
 
-        <!-- Education Section -->
-        <section id="education">
-            <h2>Education</h2>
-            <ul>
-                <li><strong>B.Tech, Koneru Lakshmaih University (2021 - Present)</strong> - CGPA: 9.02</li>
-                <li><strong>Intermediate, NRI Junior College (2019 - 2021)</strong> - Marks: 951</li>
-                <li><strong>SSC, GNR Model School (2019)</strong> - GPA: 9.3</li>
-            </ul>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects">
-            <h2>Projects</h2>
-            <ul>
-                <li><strong>Light Following Robot</strong><br>
-                    Designed a robot that tracks light sources autonomously using sensor inputs and a motor control algorithm.
-                </li>
-                <li><strong>Library Management System</strong><br>
-                    Developed a Python-based system for managing book borrowing, returning, and donation using modular OOP principles.
-                </li>
-                <li><strong>Low Power Array Multiplier</strong><br>
-                    Designed a multiplier achieving a 27% reduction in power consumption by modifying the traditional full adder.
-                </li>
-            </ul>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills">
-            <h2>Skills</h2>
-            <ul>
-                <li><strong>Programming Languages:</strong> Python, Java</li>
-                <li><strong>Soft Skills:</strong> Time Management, Problem Solving, Teamwork</li>
-                <li><strong>Software Tools:</strong> Eclipse, Jupyter Notebook</li>
-            </ul>
-        </section>
-
-        <!-- Certifications Section -->
-        <section id="certifications">
-            <h2>Certifications</h2>
-            <ul>
-                <li>Python Basics, HackerRank</li>
-                <li>Java Basics, HackerRank</li>
-                <li>Problem Solving Basics, HackerRank</li>
-            </ul>
-        </section>
-
+    <div class="footer">
+        <p>ALLU NAGA SAI MOHITH </p>
     </div>
-
-    <!-- Footer -->
-    <footer id="contact">
-        <p>Email: <a href="mailto:2100040232ece@gmail.com" style="color: var(--text-color);">2100040232ece@gmail.com</a></p>
-        <p>Phone: <a href="tel:+91-6300790004" style="color: var(--text-color);">+91-6300790004</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/mohith-allu-937a7b255/" target="_blank" style="color: var(--text-color);">linkedin.com/in/mohith-allu</a></p>
-    </footer>
+</div>
 
 </body>
 </html>
