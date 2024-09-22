@@ -94,10 +94,17 @@
             align-items: center;
             margin-bottom: 30px;
             position: relative;
+            flex-wrap: wrap; /* Ensure items wrap on small screens */
         }
 
         .header-info div {
             text-align: right;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .header-info div:first-child {
+            text-align: left;
         }
 
         .header-info a {
@@ -112,7 +119,6 @@
             text-decoration: underline;
         }
 
-        /* Cool line effect for links */
         .header-info a::after {
             content: "";
             width: 0%;
@@ -150,7 +156,6 @@
             color: var(--secondary-color);
         }
 
-        /* Section titles with zoom effect */
         .section-title {
             margin-top: 40px;
             font-size: 22px;
@@ -165,7 +170,6 @@
             transform: scale(1);
         }
 
-        /* Floating footer effect */
         .footer {
             text-align: center;
             margin-top: 40px;
@@ -188,7 +192,6 @@
             margin-bottom: 10px;
         }
 
-        /* Enhanced hover effects for a dynamic feel */
         a {
             color: var(--primary-color);
             text-decoration: none;
@@ -206,7 +209,6 @@
             color: var(--text-color);
         }
 
-        /* Card-like effect for project and education list items */
         ul li {
             background-color: var(--bg-color);
             border-left: 4px solid var(--primary-color);
@@ -239,6 +241,60 @@
         ul li:hover::before {
             opacity: 1;
             left: -5px;
+        }
+
+        /* Media queries for responsiveness */
+        @media (max-width: 768px) {
+            .header-info {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .skills {
+                grid-template-columns: 1fr; /* Stack skill items */
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            p, li {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            p, li {
+                font-size: 12px;
+            }
+
+            .header-info div {
+                width: 100%;
+            }
+
+            .skills div {
+                padding: 10px;
+            }
         }
     </style>
 </head>
