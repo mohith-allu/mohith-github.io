@@ -8,14 +8,14 @@
     <style>
         :root {
             --primary-color: #3498db;
-            --secondary-color: #1abc9c;
-            --text-color: #2c3e50;
-            --bg-color: #f4f6f7;
-            --accent-color: #f39c12;
+            --secondary-color: #f39c12;
+            --text-color: #ecf0f1;
+            --bg-color: #2c3e50;
+            --highlight-bg: #34495e;
         }
 
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--bg-color);
             margin: 0;
             padding: 0;
@@ -28,10 +28,10 @@
             width: 100%;
             top: 0;
             left: 0;
-            background-color: var(--primary-color);
+            background-color: var(--highlight-bg);
             padding: 15px;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
         .navbar ul {
@@ -43,11 +43,11 @@
         }
 
         .navbar ul li {
-            margin: 0 15px;
+            margin: 0 20px;
         }
 
         .navbar ul li a {
-            color: white;
+            color: var(--text-color);
             text-decoration: none;
             font-weight: bold;
             font-size: 18px;
@@ -55,16 +55,55 @@
         }
 
         .navbar ul li a:hover {
-            color: var(--accent-color);
+            color: var(--secondary-color);
         }
 
-        /* For smooth scrolling */
-        html {
-            scroll-behavior: smooth;
+        /* Hero Section */
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 100px 50px;
+            background-color: var(--highlight-bg);
+            border-bottom: 5px solid var(--primary-color);
         }
 
-        body {
-            padding-top: 80px;
+        .hero-text {
+            max-width: 50%;
+        }
+
+        .hero-text h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .hero-text a {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        .hero-text a:hover {
+            background-color: var(--primary-color);
+        }
+
+        .hero-img {
+            max-width: 40%;
+        }
+
+        .hero-img img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
         /* Resume Container */
@@ -72,48 +111,23 @@
             max-width: 900px;
             background-color: #ffffff;
             padding: 30px;
-            margin: 0 auto;
+            margin: 50px auto;
             border-radius: 15px;
             box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
-            border-left: 6px solid var(--primary-color);
-            animation: fadeInUp 1.5s ease-in-out;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        h1, h2 {
-            color: var(--primary-color);
-            font-family: 'Georgia', serif;
-        }
-
-        h1 {
-            font-size: 40px;
-            margin-bottom: 10px;
-            border-bottom: 3px solid var(--primary-color);
-            padding-bottom: 10px;
-            animation: fadeIn 1.5s ease;
         }
 
         h2 {
+            color: var(--primary-color);
             font-size: 26px;
             margin-bottom: 15px;
-            border-bottom: 2px solid var(--secondary-color);
+            border-bottom: 2px solid var(--primary-color);
             padding-bottom: 5px;
-            animation: fadeIn 1.5s ease-in-out;
         }
 
         p, li {
             font-size: 16px;
             line-height: 1.8;
+            color: var(--bg-color);
         }
 
         ul {
@@ -121,64 +135,16 @@
             padding: 0;
         }
 
-        .header-info {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-            position: relative;
-        }
-
-        /* Smooth hover effects for links */
-        .header-info a {
-            color: var(--secondary-color);
-            text-decoration: none;
-            font-weight: bold;
-            position: relative;
-        }
-
-        .header-info a:hover {
-            color: var(--accent-color);
-            text-decoration: underline;
-        }
-
-        /* Skills section */
-        .skills {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-
-        .skills div {
-            padding: 15px;
-            background-color: var(--bg-color);
-            border-radius: 10px;
-            transition: background-color 0.3s ease;
-        }
-
-        .skills div:hover {
-            background-color: var(--primary-color);
-            color: #fff;
-        }
-
-        /* Floating footer */
+        /* Footer */
         .footer {
             text-align: center;
             margin-top: 40px;
             font-size: 14px;
             color: #95a5a6;
-            transform: translateY(0);
-            animation: floatUp 2s ease-out infinite alternate;
+            padding: 20px;
+            background-color: var(--highlight-bg);
         }
 
-        @keyframes floatUp {
-            0% {
-                transform: translateY(0);
-            }
-            100% {
-                transform: translateY(-5px);
-            }
-        }
     </style>
 </head>
 
@@ -195,20 +161,20 @@
         </ul>
     </nav>
 
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-text">
+            <h1>Allu Naga Sai Mohith</h1>
+            <p>I'm a motivated B.Tech student specializing in Electronics and Communication Engineering, with a strong foundation in Python and a passion for developing creative solutions.</p>
+            <a href="mailto:2100040232ece@gmail.com">Contact Me</a>
+        </div>
+        <div class="hero-img">
+            <img src="https://via.placeholder.com/350x350.png" alt="Your Profile Image">
+        </div>
+    </div>
+
     <!-- Resume Content -->
     <div class="container">
-        <div class="header-info">
-            <div>
-                <h1>ALLU NAGA SAI MOHITH</h1>
-            </div>
-            <div>
-                <p>Guntur, India</p>
-                <p>Email: <a href="mailto:2100040232ece@gmail.com">2100040232ece@gmail.com</a></p>
-                <p>Phone: <a href="tel:+91-6300790004">+91 6300790004</a></p>
-                <p>LinkedIn: <a href="https://www.linkedin.com/in/mohith-allu-937a7b255/" target="_blank">linkedin.com/in/mohith-allu</a></p>
-            </div>
-        </div>
-
         <h2 id="career-objective">Career Objective</h2>
         <p>Motivated B.Tech student specializing in Electronics and Communication Engineering with a strong foundation in programming. Proficient in Python and eager to enhance software development and problem-solving skills.</p>
 
@@ -221,21 +187,18 @@
 
         <h2 id="projects">Projects</h2>
         <ul>
-            <li><strong>Light Following Robot</strong><br>
-                Designed a light-following robot capable of detecting and tracking light sources autonomously.</li>
-            <li><strong>Library Management System</strong><br>
-                Developed a Python-based system with a modular design to handle library operations efficiently.</li>
-            <li><strong>Low Power Array Multiplier</strong><br>
-                Created a low-power array multiplier, reducing power consumption by 27%.</li>
+            <li><strong>Light Following Robot</strong><br> Designed a light-following robot capable of detecting and tracking light sources autonomously.</li>
+            <li><strong>Library Management System</strong><br> Developed a Python-based system with a modular design to handle library operations efficiently.</li>
+            <li><strong>Low Power Array Multiplier</strong><br> Created a low-power array multiplier, reducing power consumption by 27%.</li>
         </ul>
 
         <h2 id="skills">Skills</h2>
-        <div class="skills">
-            <div><strong>Programming Languages:</strong> Python, Java</div>
-            <div><strong>Software Tools:</strong> Eclipse, Jupyter Notebook</div>
-            <div><strong>Soft Skills:</strong> Time Management, Problem Solving, Teamwork</div>
-            <div><strong>Languages:</strong> Telugu, English, Hindi</div>
-        </div>
+        <ul>
+            <li><strong>Programming Languages:</strong> Python, Java</li>
+            <li><strong>Software Tools:</strong> Eclipse, Jupyter Notebook</li>
+            <li><strong>Soft Skills:</strong> Time Management, Problem Solving, Teamwork</li>
+            <li><strong>Languages:</strong> Telugu, English, Hindi</li>
+        </ul>
 
         <h2 id="certifications">Certifications</h2>
         <ul>
@@ -243,11 +206,13 @@
             <li>Java Basics, HackerRank</li>
             <li>Problem Solving Basics, HackerRank</li>
         </ul>
-
-        <div class="footer">
-            <p>ALLU NAGA SAI MOHITH</p>
-        </div>
     </div>
+
+    <!-- Footer Section -->
+    <div class="footer">
+        <p>Allu Naga Sai Mohith | Email: <a href="mailto:2100040232ece@gmail.com">2100040232ece@gmail.com</a></p>
+    </div>
+
 </body>
 
 </html>
